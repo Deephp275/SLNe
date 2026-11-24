@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+a, button, input, select, textarea, label, summary { touch-action: manipulation; }   /* phones: tap responds at once, no double-tap-zoom delay */
+body { background: #171411; color: #EDE3D2; -webkit-font-smoothing: antialiased; }
+::selection { background: #B58A4B; color: #171411; }
+
+@layer components {
+  .wood {
+    background-color: #2a1b14;
+    background-image:
+      linear-gradient(180deg, rgba(23,20,17,.55), rgba(23,20,17,.85)),
+      url("/images/wood-tile.jpg");
+  }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-sm font-semibold uppercase tracking-wider transition duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-soft disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-gold { @apply btn bg-gold text-ink hover:bg-gold-soft hover:-translate-y-0.5; }
+  .btn-outline { @apply btn border border-gold/70 text-cream hover:bg-gold hover:text-ink; }
+  .btn-sm { @apply px-4 py-2 text-xs; }
+  .btn-wa { @apply btn bg-[#25D366] text-ink hover:brightness-110; }
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .section { @apply py-20 sm:py-28; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.3em] text-gold-soft; }
+  .h-display { @apply font-display font-semibold tracking-tight text-cream; }
+  .gold-rule { @apply h-px w-16 bg-gold; }
+  .card { @apply rounded-sm border border-gold/20 bg-walnut/40; }
+  .input { @apply w-full rounded-sm border border-gold/25 bg-ink/70 px-4 py-3 text-sm text-cream placeholder:text-cream/40 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold; }
+  .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-cream/70; }
+}
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@keyframes pagein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.page-in { animation: pagein .45s ease both; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .page-in { animation: none; }
+}

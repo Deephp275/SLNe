@@ -1,0 +1,11 @@
+node_modules
+.next
+.env.local
+data/
+test-results/
+playwright-report/
+.env.test
+data-test/
+.claude/
+test-results-console.txt
+*.zip
