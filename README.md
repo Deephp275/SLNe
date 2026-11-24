@@ -9,6 +9,12 @@ While the Supabase keys in `.env.local` are still the `YOUR-...` placeholders, t
 - Photos are served from `data/uploads`. Admin → Account & Security has a button that deletes photos nothing uses any more.
 - This mode is for working on your own PC. To go live, set up Supabase below; the site switches over automatically when real keys are present (local data is not copied across).
 
+## Public link with GitHub Pages (static copy)
+GitHub can only serve plain files, not this Next.js site with its admin and database. What it CAN serve is the one-file copy of the whole website in `docs/index.html`: all pages, pictures, fonts and the product filters work, and enquiry forms open WhatsApp. There is no admin and no saved data in that copy.
+
+- Turn it on once: GitHub repo -> Settings -> Pages -> Source: *Deploy from a branch* -> Branch `main`, folder `/docs` -> Save. The link is `https://<your-username>.github.io/<repo-name>/`.
+- Refresh it after you change products or contact details: start the site, run `npm run build:standalone`, then commit and push.
+
 ## Running it
 | Script | What it does |
 |---|---|

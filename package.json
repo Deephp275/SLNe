@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "test:e2e": "playwright test", "lint": "eslint .",
+    "test:e2e": "playwright test", "lint": "eslint .", "build:standalone": "node scripts/standalone/build.js",
     "start": "node server.js --prod"
   },
   "dependencies": {
